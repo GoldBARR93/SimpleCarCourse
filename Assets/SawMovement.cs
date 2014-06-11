@@ -19,9 +19,7 @@ public class SawMovement : MonoBehaviour {
 		transform.position = targetPos1;
 		prevPos = transform.position;
 	}
-	
-	// This is a test
-	
+
 	// in Update, move the box around between the two points
 	void Update()
 	{
