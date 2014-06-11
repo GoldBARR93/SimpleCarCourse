@@ -9,6 +9,8 @@ public class CarDriver : MonoBehaviour {
 	public Transform LowestObjectPosition;
 	public Transform RespawnPosition;
 
+	public Transform CurrentRespawnPosition;
+
 	public GUIText deathCountOutput;
 	public int deathCount = 0; 
 	public GUIText introOutput;
@@ -16,17 +18,16 @@ public class CarDriver : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-	
+		CurrentRespawnPosition = RespawnPosition;
 	}
 
 	public void Respawn(){			
-		transform.position = RespawnPosition.position;
-		transform.rotation = RespawnPosition.rotation;
+		transform.position = CurrentRespawnPosition.position;
+		transform.rotation = CurrentRespawnPosition.rotation;
 		rigidbody.velocity = Vector3.zero;
 		rigidbody.angularVelocity = Vector3.zero;
 		deathCount++;
 	}
-		
 
 	// Update is called once per frame
 	void Update () {
